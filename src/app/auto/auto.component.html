@@ -1,10 +1,11 @@
-<div class="container">
-  <h2>Auto Id: {{auto.Id}}</h2>
-  <p>
-    <strong>ECV:</strong>
-    {{auto.Ecv}}
-
-    <strong>Poznamka:</strong>
-    {{auto.Poznamka}}
-  </p>
+<div class="card bg-light mb-3">
+  <div class="card-header">
+    Auto ID {{auto.Id}}
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{auto.Ecv}}</h5>
+    <div class="card-text mb-3">{{auto.Poznamka}}</div>
+    <a href="#" class="btn btn-outline-primary mr-1">Upraviť</a>
+    <a href="#" class="btn btn-outline-danger">Vymazať</a>
+  </div>
 </div>

@@ -1,5 +1,10 @@
-<h2>Osoba Id: {{osoba.Id}}</h2>
-<p>
-  <strong>Meno:</strong>
-  {{osoba.Meno + " " + osoba.Priezvisko}}
-</p>
+<div class="card bg-light mb-3">
+  <div class="card-header">
+    Osoba Id {{osoba.Id}}
+  </div>
+  <div class="card-body">
+    <h5 class="card-title mb-3">{{osoba.Meno}} {{osoba.Priezvisko}}</h5>
+    <a href="#" class="btn btn-outline-primary mr-1">Upraviť</a>
+    <a href="#" class="btn btn-outline-danger">Vymazať</a>
+  </div>
+</div>
