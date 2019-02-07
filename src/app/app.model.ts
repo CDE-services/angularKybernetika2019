@@ -2,11 +2,13 @@ export class Osoba {
   public Id: number;
   public Meno: string;
   public Priezvisko: string;
+  public PhotoUrl: string;
 
-  constructor(Id: number, Meno: string, Priezvisko: string) {
+  constructor(Id: number, Meno: string, Priezvisko: string, PhotoUrl: string) {
     this.Id = Id;
     this.Meno = Meno;
     this.Priezvisko = Priezvisko;
+    this.PhotoUrl = PhotoUrl;
   }
 }
 

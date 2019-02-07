@@ -9,6 +9,8 @@ import { AutoComponent } from './auto/auto.component';
 import { TestComponent } from './test/test.component';
 import { OsobaEditComponent } from './osoba-edit/osoba-edit.component';
 import { OsobaListComponent } from './osoba-list/osoba-list.component';
+import { AutoEditComponent } from './auto-edit/auto-edit.component';
+import { AutoListComponent } from './auto-list/auto-list.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { OsobaListComponent } from './osoba-list/osoba-list.component';
     AutoComponent,
     TestComponent,
     OsobaEditComponent,
-    OsobaListComponent
+    OsobaListComponent,
+    AutoEditComponent,
+    AutoListComponent
   ],
   imports: [
     BrowserModule,

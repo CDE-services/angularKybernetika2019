@@ -1,3 +1,6 @@
 <h1>Zoznam osôb</h1>
 
-<app-osoba *ngFor="let o of osoby"></app-osoba>
+<app-osoba
+  *ngFor="let o of osoby"
+  [osoba]="o"
+></app-osoba>

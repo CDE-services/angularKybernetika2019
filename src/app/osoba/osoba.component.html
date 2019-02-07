@@ -1,6 +1,7 @@
 <div class="card bg-light mb-3">
   <div class="card-header">
     Osoba Id {{osoba.Id}}
+    <img [src]="osoba.PhotoUrl" [style.width.px]="pictureWidth">
   </div>
   <div class="card-body">
     <h5 class="card-title mb-3">{{osoba.Meno}} {{osoba.Priezvisko}}</h5>

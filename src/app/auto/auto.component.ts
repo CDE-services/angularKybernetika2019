@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Auto } from '../app.model';
 
 @Component({
@@ -7,5 +7,5 @@ import { Auto } from '../app.model';
   styleUrls: ['./auto.component.css']
 })
 export class AutoComponent {
-  auto: Auto = new Auto(-1, 'AV123XY', 'Toto je velmi pekne auto');
+  @Input() auticko: Auto = new Auto(-1, 'AV123XY', 'Toto je velmi pekne auto');
 }
