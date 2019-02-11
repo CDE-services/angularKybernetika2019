@@ -8,9 +8,9 @@ import { Auto } from '../app.model';
 })
 export class AutoListComponent {
   auta: Auto[] = [
-    new Auto(-1, 'AB123YC', 'Neskutocne auticko'),
-    new Auto(-1, 'JK789YT', 'Nenormalne auticko'),
-    new Auto(-1, 'BN698IX', 'Stara sunka'),
-    new Auto(-1, 'WX890YA', 'Este starsia sunka')
+    new Auto(1, 'AB123YC', 'Neskutocne auticko'),
+    new Auto(2, 'JK789YT', 'Nenormalne auticko'),
+    new Auto(3, 'BN698IX', 'Stara sunka'),
+    new Auto(4, 'WX890YA', 'Este starsia sunka')
   ];
 }

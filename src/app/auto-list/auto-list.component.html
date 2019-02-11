@@ -1,6 +1,19 @@
 <h1>Zoznam áut</h1>
 
+<ul class="list-group">
+    <li
+      class="list-group-item"
+      *ngFor="let a of auta"
+      [routerLink]="'/auto/' + a.Id">
+
+      {{a.Id}}. {{a.Ecv}}
+
+    </li>
+  </ul>
+
+  <!--
 <app-auto
   *ngFor="let a of auta"
   [auticko]='a'
 ></app-auto>
+-->

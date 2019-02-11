@@ -1,6 +1,19 @@
 <h1>Zoznam osôb</h1>
 
+<ul class="list-group">
+  <li
+    class="list-group-item"
+    *ngFor="let o of osoby"
+    [routerLink]="'/osoba/' + o.Id">
+
+    {{o.Id}}. {{o.Meno}}
+
+  </li>
+</ul>
+
+<!--
 <app-osoba
   *ngFor="let o of osoby"
   [osoba]="o"
 ></app-osoba>
+-->

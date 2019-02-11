@@ -1,9 +1,31 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">AutoPark</a>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="osoby" routerLinkActive="active">Osoby</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="auta" routerLinkActive="active">Auta</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
 <div class="container-fluid">
+  <router-outlet></router-outlet>
+</div>
+
+
+
+
+
+
   <!--h1>Toto je moja apka s nazvom {{title}}</h1>
   <app-auto></app-auto>
   <app-osoba></app-osoba>
   <app-test></app-test>-->
-  <p>
+  <!--<p>
     <app-auto-list></app-auto-list>
   </p>
   <p>
@@ -14,8 +36,7 @@
   </p>
   <p>
     <app-osoba-list></app-osoba-list>
-  </p>
-</div>
+  </p> -->
 
 <!--The content below is only a placeholder and can be replaced.-->
 <!--div style="text-align:center">
@@ -45,5 +66,3 @@
     <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
   </li>
 </ul-->
-
-<router-outlet></router-outlet>

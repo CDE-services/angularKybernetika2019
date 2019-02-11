@@ -5,7 +5,13 @@
   <div class="card-body">
     <h5 class="card-title">{{auticko.Ecv}}</h5>
     <div class="card-text mb-3">{{auticko.Poznamka}}</div>
-    <a href="#" class="btn btn-outline-primary mr-1">Upraviť</a>
-    <a href="#" class="btn btn-outline-danger">Vymazať</a>
+    <a
+      class="btn btn-outline-primary mr-1"
+      [routerLink]="'/auto-edit/' + auticko.Id"
+    >Upraviť</a>
+    <a
+      class="btn btn-outline-danger"
+      (click)="goBack()"
+    >Vymazať</a>
   </div>
 </div>

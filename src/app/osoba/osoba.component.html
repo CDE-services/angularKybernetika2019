@@ -5,7 +5,13 @@
   </div>
   <div class="card-body">
     <h5 class="card-title mb-3">{{osoba.Meno}} {{osoba.Priezvisko}}</h5>
-    <a href="#" class="btn btn-outline-primary mr-1">Upraviť</a>
-    <a href="#" class="btn btn-outline-danger">Vymazať</a>
+    <a
+      class="btn btn-outline-primary mr-1"
+      [routerLink]="'/osoba-edit/' + osoba.Id"
+    >Upraviť</a>
+    <a
+      class="btn btn-outline-danger"
+      (click)='goBack()'
+      >Vymazať</a>
   </div>
 </div>
