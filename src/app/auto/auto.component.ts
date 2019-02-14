@@ -1,6 +1,6 @@
 import { AutoService } from './../service/auto.service';
 import { Location } from '@angular/common';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Component, Input, OnInit } from '@angular/core';
 import { Auto } from '../app.model';
 
@@ -15,7 +15,8 @@ export class AutoComponent implements OnInit {
   constructor(
     private activatedRoute: ActivatedRoute,
     private location: Location,
-    private autoService: AutoService) {}
+    private autoService: AutoService,
+    private router: Router) {}
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(
@@ -30,8 +31,10 @@ export class AutoComponent implements OnInit {
 
   deleteAuto(): void {
     this.autoService.deleteAuto(this.auticko.Id).subscribe(
-      data => console.log(data)
+      data => {
+        console.log(data + ' was deleted');
+        this.location.back();
+      }
     );
-    this.location.back();
   }
 }
