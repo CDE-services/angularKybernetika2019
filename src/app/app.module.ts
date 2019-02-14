@@ -1,3 +1,4 @@
+import { AutoService } from './service/auto.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -11,6 +12,8 @@ import { OsobaEditComponent } from './osoba-edit/osoba-edit.component';
 import { OsobaListComponent } from './osoba-list/osoba-list.component';
 import { AutoEditComponent } from './auto-edit/auto-edit.component';
 import { AutoListComponent } from './auto-list/auto-list.component';
+import { HttpClientModule } from '@angular/common/http';
+import { OsobaService } from './service/osoba.service';
 
 @NgModule({
   declarations: [
@@ -26,9 +29,10 @@ import { AutoListComponent } from './auto-list/auto-list.component';
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [ AutoService, OsobaService ],
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }

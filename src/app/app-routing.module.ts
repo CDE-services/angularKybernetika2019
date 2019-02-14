@@ -6,6 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { OsobaListComponent } from './osoba-list/osoba-list.component';
 import { OsobaEditComponent } from './osoba-edit/osoba-edit.component';
 import { OsobaComponent } from './osoba/osoba.component';
+import { TestComponent } from './test/test.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/auta', pathMatch: 'full' },
@@ -13,8 +14,11 @@ const routes: Routes = [
   { path: 'auta',       component: AutoListComponent  },
   { path: 'osoba-edit/:id', component: OsobaEditComponent },
   { path: 'auto-edit/:id',  component: AutoEditComponent  },
+  { path: 'osoba-edit', component: OsobaEditComponent },
+  { path: 'auto-edit',  component: AutoEditComponent  },
   { path: 'osoba/:id',  component: OsobaComponent  },
-  { path: 'auto/:id',   component: AutoComponent  }
+  { path: 'auto/:id',   component: AutoComponent  },
+  { path: 'test',   component: TestComponent  }
 ];
 
 @NgModule({

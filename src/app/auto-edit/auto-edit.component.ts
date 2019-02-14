@@ -1,3 +1,4 @@
+import { AutoService } from './../service/auto.service';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { Auto } from '../app.model';
@@ -10,13 +11,22 @@ import { Auto } from '../app.model';
 export class AutoEditComponent implements OnInit {
   auto: Auto = new Auto(-1, 'AB678KY', 'Toto je škaredé auto.');
 
-  constructor(private ar: ActivatedRoute) {}
+  constructor(
+    private ar: ActivatedRoute,
+    private autoService: AutoService,
+    ) {}
 
   ngOnInit(): void {
     this.ar.params.subscribe(
       (params: Params) => {
         const id = +params['id'];
-        this.auto = new Auto(id, 'AB123CD', 'NENORMALNE AUTO!');
+        if (!id) {
+          this.auto = new Auto(-1, '', '');
+        } else {
+          this.autoService.getAuto(id).subscribe(
+            data => this.auto = data
+          );
+        }
       });
   }
 

@@ -2,7 +2,7 @@
 
 <ul class="list-group">
   <li
-    class="list-group-item"
+    class="klikatelny-riadok list-group-item"
     *ngFor="let o of osoby"
     [routerLink]="'/osoba/' + o.Id">
 
@@ -10,6 +10,8 @@
 
   </li>
 </ul>
+
+<!--<li style="cursor: pointer; font-weight: bold"></li>-->
 
 <!--
 <app-osoba

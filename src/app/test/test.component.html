@@ -1,3 +1,15 @@
-<p>
-  test works!
-</p>
+<div *ngIf="premenna">
+  MAM BICYKEL!
+</div>
+<div *ngIf="!premenna">
+    NEMAM BICYKEL!
+  </div>
+
+<div class="form-check">
+  <input
+    type="checkbox"
+    class="form-check-input"
+    id="exampleCheck1"
+    [(ngModel)]="premenna">
+  <label class="form-check-label" for="exampleCheck1">Zaciarkni</label>
+</div>

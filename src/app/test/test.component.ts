@@ -2,12 +2,9 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-test',
-  template:  `
-    Obsah premennej: {{premenna}}
-    <input type="text" [(ngModel)]="premenna">
-  `,
+  templateUrl: 'test.component.html',
   styleUrls: ['./test.component.css']
 })
 export class TestComponent {
-  premenna = 'daco';
+  premenna = true;
 }
