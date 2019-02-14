@@ -23,8 +23,12 @@
            [(ngModel)]="auto.Poznamka"
            id="poznamka" name="poznamka">
   </div>
-  <button type="submit" class="btn btn-outline-primary mr-1">Ulož</button>
-  <button type="submit" class="btn btn-outline-danger">Reset</button>
+  <button type="reset" class="btn btn-outline-danger">Reset</button>
+  <button
+    type="submit"
+    class="btn btn-outline-primary mr-1"
+    (click)="ulozAuto()"
+  >Ulož</button>
 </form>
 
 <p>

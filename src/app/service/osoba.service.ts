@@ -12,4 +12,9 @@ export class OsobaService {
   getOsoby(): Observable<Osoba[]> {
     return this.http.get<Osoba[]>(this.serverUrl);
   }
+
+  // getOsoba(index: number)
+  // deleteOsoba(index: number)
+  // addOsoba(osoba: Osoba)
+  // editOsoba(osoba: Osoba)
 }

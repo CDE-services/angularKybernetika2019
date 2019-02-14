@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { AutoService } from './../service/auto.service';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
@@ -14,6 +15,7 @@ export class AutoEditComponent implements OnInit {
   constructor(
     private ar: ActivatedRoute,
     private autoService: AutoService,
+    private location: Location
     ) {}
 
   ngOnInit(): void {
@@ -28,6 +30,24 @@ export class AutoEditComponent implements OnInit {
           );
         }
       });
+  }
+
+  ulozAuto(): void {
+    if (this.auto.Id === -1) {
+      this.autoService.addAuto(this.auto).subscribe(
+        data => {
+          this.auto.Id = data.Id;
+          this.location.back();
+        }
+      );
+    } else {
+      this.autoService.editAuto(this.auto).subscribe(
+        data => {
+          console.log(data + ' bolo aktualizovane');
+          this.location.back();
+        }
+      );
+    }
   }
 
   autoToString(): string {

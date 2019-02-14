@@ -28,4 +28,13 @@ export class AutoService {
     return this.http.delete<Auto>(this.serverUrl + '/' + index,
                                  httpOptions);
   }
+
+  addAuto(auto: Auto): Observable<Auto> {
+    delete auto.Id;
+    return this.http.post<Auto>(this.serverUrl, auto, httpOptions);
+  }
+
+  editAuto(auto: Auto): Observable<Auto> {
+    return this.http.put<Auto>(this.serverUrl + '/' + auto.Id, auto, httpOptions);
+  }
 }
