@@ -15,6 +15,10 @@ export class OsobaListComponent implements OnInit {
   ngOnInit(): void {
     this.osobaService.getOsoby().subscribe(data => {
       this.osoby = data;
+      // skopirujem data z inak nazvaneho parametra
+      for (const osoba of this.osoby) {
+        osoba.Priezvisko = osoba['Priezviesko'];
+      }
     });
   }
 }

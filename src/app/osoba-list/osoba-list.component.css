@@ -1,3 +1,7 @@
 .klikatelny-riadok {
   cursor: pointer;
 }
+
+button {
+  margin-top: 10px;
+}

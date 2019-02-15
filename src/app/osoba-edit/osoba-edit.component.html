@@ -1,4 +1,5 @@
-<h1>Editácia osoby {{osoba.Meno}} {{osoba.Priezvisko}}</h1>
+<h1>{{osoba.Id === -1 ? 'Pridanie' : 'Editácia'}}
+    osoby {{osoba.Meno}} {{osoba.Priezvisko}}</h1>
 
 <form name="osobaForm">
   <div class="form-group">
@@ -23,7 +24,19 @@
            [(ngModel)]="osoba.Priezvisko"
            id="priezvisko" name="priezvisko">
   </div>
-  <button type="submit" class="btn btn-outline-primary mr-1">Ulož</button>
-  <button type="submit" class="btn btn-outline-danger">Reset</button>
+  <button
+    type="submit"
+    class="btn btn-outline-primary mr-1"
+    (click)="ulozOsoba()"
+  >
+    Ulož
+  </button>
+  <button
+    type="button"
+    class="btn btn-outline-danger"
+    (click)="resetOsoba()"
+  >
+    Reset
+  </button>
 </form>
 

@@ -1,15 +1,25 @@
 <h1>Zoznam osôb</h1>
 
-<ul class="list-group">
+<ul class="list-group" *ngIf="osoby.length > 0">
   <li
     class="klikatelny-riadok list-group-item"
     *ngFor="let o of osoby"
     [routerLink]="'/osoba/' + o.Id">
 
-    {{o.Id}}. {{o.Meno}}
+    {{o.Id}}. {{o.Priezvisko}} {{o.Meno}}
 
   </li>
 </ul>
+
+<div *ngIf="osoby.length == 0">
+  Prosím čakajte...
+</div>
+
+<button
+  class="btn btn-primary"
+  routerLink="/osoba-edit">
+  Pridať osobu
+</button>
 
 <!--<li style="cursor: pointer; font-weight: bold"></li>-->
 
