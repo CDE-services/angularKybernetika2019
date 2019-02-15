@@ -2,7 +2,7 @@ import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-import { Auto } from './../app.model';
+import { Auto, Osoba } from './../app.model';
 
 const httpOptions = {
   headers: new HttpHeaders(

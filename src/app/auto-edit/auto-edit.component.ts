@@ -11,6 +11,7 @@ import { Auto } from '../app.model';
 })
 export class AutoEditComponent implements OnInit {
   auto: Auto = new Auto(-1, 'AB678KY', 'Toto je škaredé auto.');
+  // editAuto: Auto = new Auto(-1, '', '');
 
   constructor(
     private ar: ActivatedRoute,
@@ -26,7 +27,12 @@ export class AutoEditComponent implements OnInit {
           this.auto = new Auto(-1, '', '');
         } else {
           this.autoService.getAuto(id).subscribe(
-            data => this.auto = data
+            data => {
+              this.auto = data;
+              // this.editAuto.Id = this.auto.Id;
+              // this.editAuto.Ecv = this.auto.Ecv;
+              // this.editAuto.Poznamka = this.auto.Poznamka;
+            }
           );
         }
       });
@@ -47,6 +53,15 @@ export class AutoEditComponent implements OnInit {
           this.location.back();
         }
       );
+    }
+  }
+
+  resetAuto(): void {
+    if (this.auto.Id === -1) {
+      this.auto.Ecv = '';
+      this.auto.Poznamka = '';
+    } else {
+      // do nothing
     }
   }
 

@@ -1,7 +1,13 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Osoba } from '../app.model';
 import { Observable } from 'rxjs';
+
+const httpOptions = {
+  headers: new HttpHeaders(
+    {'Content-Type': 'application/json'}
+  )
+};
 
 @Injectable()
 export class OsobaService {
@@ -13,8 +19,19 @@ export class OsobaService {
     return this.http.get<Osoba[]>(this.serverUrl);
   }
 
-  // getOsoba(index: number)
-  // deleteOsoba(index: number)
-  // addOsoba(osoba: Osoba)
-  // editOsoba(osoba: Osoba)
+  getOsoba(index: number): Observable<Osoba> {
+    return this.http.get<Osoba>(this.serverUrl + '/' + index);
+  }
+
+  deleteOsoba(index: number): Observable<Osoba> {
+    return this.http.delete<Osoba>(this.serverUrl + '/' + index, httpOptions);
+  }
+
+  addOsoba(osoba: Osoba): Observable<Osoba> {
+
+  }
+
+  editOsoba(osoba: Osoba): Observable<Osoba> {
+
+  }
 }

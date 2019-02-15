@@ -1,4 +1,4 @@
-<h1>Editácia auta {{auto.Ecv}}</h1>
+<h1>{{auto.Id === -1 ? 'Vytvorenie' : 'Editácia'}} auta {{auto.Ecv}}</h1>
 
 <form name="osobaForm">
   <div class="form-group">
@@ -23,13 +23,22 @@
            [(ngModel)]="auto.Poznamka"
            id="poznamka" name="poznamka">
   </div>
-  <button type="reset" class="btn btn-outline-danger">Reset</button>
+
   <button
     type="submit"
     class="btn btn-outline-primary mr-1"
     (click)="ulozAuto()"
-  >Ulož</button>
+  >
+    Ulož
+  </button>
 </form>
+
+<button
+    class="btn btn-outline-danger"
+    (click)="resetAuto()"
+  >
+    Reset
+  </button>
 
 <p>
   {{autoToString()}}
